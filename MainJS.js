@@ -1,8 +1,27 @@
-const getPokemonData = async query => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${query}`;
-    const response = await fetch(url);
-    const pokemon = response.json();
+document.querySelector(`#searchBtn`).addEventListener(`click`, getPokemon);
 
-    document.getElementById(`updateImg`).setAttribute(`src`, pokemon.sprites.other.dream_world.front_default);
-    document.getElementById(`updateName`).innerHTML = pokemon.name;
+function getPokemon(e) {
+    const name = document.querySelector(`#searchQuery`).value;
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        .then((response) => response.json())
+        .then((data) =>{
+            document.querySelector(".pokemonCard").innerHTML = `
+            <div>
+                <img 
+                src="${data.sprites.other["official-artwork"].front_default}
+                alt="${data.name}"
+                />
+            </div>
+            <div class="pokemonInfo">
+                <h2>Name: ${data.name}</h2>
+                <h3>ID: ${data.id}</h3>
+                <p>Description: </p>
+            </div>
+            `;
+        })
+    e.preventDefault();
 }
+
+
+
