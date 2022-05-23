@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pokedex</title>
     <link rel="stylesheet" href="styles.scss">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,24 @@
     <script src="MainJS.js" defer></script>
 </head>
 <body>
+
+<div class="pokedexContainer">
+    <h1>PokeDex</h1>
+
+    <div class="searchBox">
+        <input type="text" class="inputField" id="searchQuery" placeholder="Search Pokemon by name or ID">
+        <button class="searchButton" id="searchBtn"></button>
+    </div>
+
+    <div class="pokemonCard" id="pokemonInfo">
+        <div class="pokemonImg">
+            <img id="updateImg" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="">
+        </div>
+        <div class="pokemonInfo">
+            <h2 id="updateName">Pikachu</h2>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

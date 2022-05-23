@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pokedex-promise-v2": "^4.0.0",
+    "pokemon-sprites": "github:PokeAPI/sprites"
+  }
+}
