@@ -70,3 +70,13 @@ button {
 .pokemonInfo {
     padding: 2rem;
 }
+
+.pokemonEvos {
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    justify-content: center;
+    border: 1px solid lightblue;
+    border-radius: 15%
+}

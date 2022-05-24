@@ -22,7 +22,7 @@ Basic functionality that is expected (read: core features):
 - [] Of said pokémon you need to show:
     - [x] The ID-number
     - [x] An image (sprite)
-    - []_At least_ 4 "moves"
+    - [x]_At least_ 4 "moves"
     - []The previous evolution, _only if it exists_, along with their name and image. Be carefull, you cannot just do ID-1 to get the previous form, for example look into "magmar" - "magmortar". You have to use a seperate api call for this!
 
 Make your web page look like a pokédex by adding a little CSS.
