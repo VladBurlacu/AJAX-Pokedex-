@@ -1,5 +1,6 @@
 # AJAX-Pokedex- 
 
+[Play now!](https://vladburlacu.github.io/AJAX-Pokedex-/)
 ## Practical Information
 
 * Repository: `ajax-pokedex`
