@@ -1,27 +1,28 @@
 document.querySelector(`#searchBtn`).addEventListener(`click`, getPokemon);
 
-function lowerCaseName(string) {
-    return string.toLowerCase();
+function capFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 function getPokemon(e) {
     const name = document.querySelector(`#searchQuery`).value;
-    const pokemonName = lowerCaseName(name);
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         .then((response) => response.json())
-        .then((data) =>{
+        .then((data) => {
             document.querySelector(".pokemonCard").innerHTML = `
             <div>
                 <img 
                 src="${data.sprites.other["official-artwork"].front_default}"
-                alt="${data.name}"
+                alt="${capFirstLetter(data.name)}"
                 />
             </div>
             <div class="pokemonInfo">
-                <h2>Name: ${data.name}</h2>
+                <h2>Name: ${capFirstLetter(data.name)}</h2>
                 <h3>ID: ${data.id}</h3>
-                <p>Description: </p>
+                <p>Weight: ${data.weight}</p>
+                <p>Moves: ${data.moves.map(move => move.move.name).slice(0, 4)}</p>
+                <p>Evolutions: </p>
             </div>
             `;
         })
