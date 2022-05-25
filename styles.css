@@ -4,13 +4,15 @@
     box-sizing: border-box;
     background-color: #5483b4;
     background-image: url("./Resources/background.webp");
+    background-size: cover;
 }
 
 h1 {
     display: flex;
     justify-content: center;
-    padding: 25px;
 }
+
+
 
 body,
 input,
@@ -75,6 +77,7 @@ button {
 
 .pokemonEvos {
     display: flex;
+    flex-direction: row;
     margin-top: 3rem;
     margin-left: 25rem;
     margin-right: 25rem;
@@ -82,3 +85,9 @@ button {
     border: 1px solid lightblue;
     border-radius: 15%
 }
+
+.pokemonEvos img {
+    width: 200px;
+
+}
+

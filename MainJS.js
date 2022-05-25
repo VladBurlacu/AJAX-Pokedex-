@@ -27,34 +27,38 @@ document.querySelector(`#searchBtn`).addEventListener(`click`, async function ge
     let evoName = evoChainData.chain.evolves_to[0].species.name;
     let evoName2 = evoChainData.chain.evolves_to[0].evolves_to[0].species.name;
     const evoFetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${evoName}`);
-    let evoData = await evoFetch.json();
+    let evoNameData = await evoFetch.json();
     let baseForm = evoChainData.chain.species.name;
+    const baseFormFetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${baseForm}`)
+    let baseFormData = await baseFormFetch.json();
+    const secondEvoFetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${evoName2}`)
+    let secondEvoData = await secondEvoFetch.json();
+
+
     document.querySelector(`.pokemonEvos`).innerHTML = `
                 <div>
                
-                <table class="pokemonEvo">
-                <tr> 
-                    <td>Base Form: ${baseForm}</td>
+                <div class="pokemonEvo">
+                
+                    <div>Base Form: ${baseForm}
                     <img 
-                    src=""
+                    src="${baseFormData.sprites.other["official-artwork"].front_default}"
                     alt=""
-                    />
-                </tr>
-                <tr>
-                    <td>Second Evolution: ${evoName}</td>
+                    /></div>
+                
+                    <div>Second Evolution: ${evoName}
                     <img 
-                    src=""
+                    src="${evoNameData.sprites.other["official-artwork"].front_default}"
                     alt=""
-                    />
-                </tr>
-                <tr>
-                    <td>Third Evolution: ${evoName2}</td>
+                    /></div>
+                
+                    <div>Third Evolution: ${evoName2}
                     <img 
-                    src=""
+                    src="${secondEvoData.sprites.other["official-artwork"].front_default}"
                     alt=""
-                    />
-                </tr>
-                </table>
+                    /></div>
+                
+                </div>
                 `;
 })
 
