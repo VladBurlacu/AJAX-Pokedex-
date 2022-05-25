@@ -17,7 +17,7 @@ document.querySelector(`#searchBtn`).addEventListener(`click`, async function ge
             </div>
     `;
 
-    const fetchSpecies = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.name}`); //fetching the pokemon species
+    const fetchSpecies = await fetch(data.species.url); //fetching the pokemon species
     let speciesData = await fetchSpecies.json();
 
     const evoFetchChainUrl = speciesData.evolution_chain.url;
@@ -36,7 +36,7 @@ document.querySelector(`#searchBtn`).addEventListener(`click`, async function ge
 
 
     document.querySelector(`.pokemonEvos`).innerHTML = `
-                <div>
+                
                
                 <div class="pokemonEvo">
                 
