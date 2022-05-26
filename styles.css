@@ -2,10 +2,10 @@
     margin: 0;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #5483b4;
-    background-image: url("./Resources/background.webp");
+    background-color: #29284d;
+   /* background-image: url("./Resources/background.webp");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  */
 
 }
 
@@ -44,7 +44,7 @@ button {
     height: 36px;
     padding: 4px 16px;
     background-color: white;
-    color: #ffffff;
+    color: black;
 }
 
 .searchBox button {
@@ -91,6 +91,12 @@ button {
 .pokemonEvos img {
     width: 200px;
 
+}
+
+.pokedexContainer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
